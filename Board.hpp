@@ -37,5 +37,9 @@ namespace pandemic
         {return this->CitytoStation;}
         std::unordered_map<Color, bool> getColortoVaccine()
         {return this->ColortoVaccine;}
+        void remove_cures()
+        {
+            
+        }
     };
 }
