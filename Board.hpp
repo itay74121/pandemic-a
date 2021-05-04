@@ -3,11 +3,13 @@
 #include "City.hpp"
 #include "Color.hpp"
 #include <ostream>
+#include <vector>
 
 namespace pandemic
 {
     class Board
-    {      
+    {   
+        private:   
         std::unordered_map<City, int> CitytoDisease;
         std::unordered_map<City, bool> CitytoStation;
         std::unordered_map<Color, bool> ColortoVaccine;
@@ -15,20 +17,25 @@ namespace pandemic
         Board()
         {
             // init citytodisease
-            for(City c = Johannesburg;c<=Sydney;++c)
+            for(int i = 0; i < 48; i++)
             {
-                CitytoDisease[c] =0;
-                CitytoStation[c] =false;
+                City city = (City)i;
+                CitytoDisease[city] =0;
+                CitytoStation[city] =false;
             } 
             ColortoVaccine[Red]=false;
             ColortoVaccine[Black]=false;
             ColortoVaccine[Yellow]=false;
             ColortoVaccine[Blue]=false;
-
         }
         int & operator [] (City c);
         bool is_clean();
         friend std::ostream& operator <<(std::ostream& os, const Board& dt);
-
+        std::unordered_map<City, int> getCitytoDisease()
+        {return this->CitytoDisease;}
+        std::unordered_map<City, bool> getCitytoStation()
+        {return this->CitytoStation;}
+        std::unordered_map<Color, bool> getColortoVaccine()
+        {return this->ColortoVaccine;}
     };
 }

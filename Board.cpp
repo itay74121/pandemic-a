@@ -9,13 +9,14 @@ namespace pandemic
     }
     bool Board::is_clean()
     {
-        for(City c = Johannesburg;c<=Sydney;++c)
+        for(int i = 0; i < 48;i++)
         {
-           if (CitytoDisease[c] > 0)
+            City city = (City)i;
+            if(0<this->CitytoDisease[city])
             {
                 return false;
             }
-        } 
+        }
         return true;
     }
     std::ostream& operator<< (std::ostream& os, const Board& dt)

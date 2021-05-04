@@ -1,5 +1,5 @@
 #include "Player.hpp"
-
+#include <stdexcept>
 
 namespace pandemic
 {
@@ -17,6 +17,30 @@ namespace pandemic
             take_card(c);
         }
     }
+    void Player::insert_card(City c)
+    {
+        //uint ca = this->check_card(c);
+        this->cards[c] = true;
+    }
+    bool Player::check_card(City c)
+    {
+        return this->cards.find(c) != this->cards.end();
+    }
+    void Player::throw_card(City c)
+    {
+        if (check_card(c))
+        {
+            if (this->cards[c] == true)
+            {
+                this->cards[c] = false;
+            }
+            else
+            {
+                throw std::logic_error("No cards of this type to throw");
+            }
+        }
+    }
+
     Player& Player::build()
     {
         return *(this);

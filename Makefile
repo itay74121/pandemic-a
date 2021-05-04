@@ -31,7 +31,7 @@ valgrind: demo1 demo2 test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./demo2 2>&1 | { egrep "lost| at " || true; }
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
-%.o: %.cpp
+%.o: %.cpp 
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
 clean:

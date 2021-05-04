@@ -53,11 +53,11 @@ namespace pandemic
         Bogota ,
         Sydney 
     };
-    City operator ++( City value )
-    {   
-        unsigned int x = value;
-        return ( static_cast<City>( ++x ) );
-    }
+    // City operator ++( City value )
+    // {   
+    //     unsigned int x = value;
+    //     return ( static_cast<City>( ++x ) );
+    // }
 } // namespace name
 
 
