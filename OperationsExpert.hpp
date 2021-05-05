@@ -8,7 +8,7 @@ namespace pandemic{
         using Player::Player;
         //OperationsExpert();
         ~OperationsExpert();
-        
+        Player& build() override;
         
     };
 }

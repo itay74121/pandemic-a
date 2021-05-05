@@ -295,6 +295,7 @@ TEST_CASE("treat throw")
 
 TEST_CASE("role test")
 {
+    init();
     CHECK(researcher->role() == "researcher");
     CHECK(scientist->role() == "scientist");
     CHECK(operationsexpert->role() == "operationsexpert");
@@ -303,6 +304,7 @@ TEST_CASE("role test")
     CHECK(fielddoctor->role() == "fielddoctor");
     CHECK(dispatcher->role() == "dispatcher");
     CHECK(genesplicer->role() == "genesplicer");
+    _init();
 }
 
 TEST_CASE("medic abilities")

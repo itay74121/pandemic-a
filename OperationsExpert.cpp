@@ -7,8 +7,8 @@ namespace pandemic
     {
 
     }
-    // OperationsExpert::OperationsExpert()
-    // {
-
-    // }
+    Player& OperationsExpert::build()
+    {
+        return *this;
+    }
 }

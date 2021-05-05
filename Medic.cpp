@@ -3,12 +3,16 @@
 #include "Medic.hpp"
 namespace pandemic
 {
-    // Medic::Medic()
-    // {
-
-    // }
     Medic::~Medic()
     {
 
+    }
+    Player& Medic::drive(City c) 
+    {
+        return *this;
+    }
+    Player& Medic::treat(City c) 
+    {
+        return *this;
     }
 }
