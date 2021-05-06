@@ -7,12 +7,29 @@
 
 namespace pandemic
 {
+    class City_
+    {
+        private:
+        std::vector<City> connections;
+        Color color;
+        uint diseasepoints;
+        bool station;
+        bool card;
+        public:
+        City_()
+    };
     class Board
     {   
         private:   
-        std::unordered_map<City, int> CitytoDisease;
-        std::unordered_map<City, bool> CitytoStation;
-        std::unordered_map<Color, bool> ColortoVaccine;
+        // std::unordered_map<City, int> CitytoDisease;
+        int CitytoDisease [48];
+        // std::unordered_map<City, bool> CitytoStation;
+        bool CitytoStation[48];
+        // std::unordered_map<Color, bool> ColortoVaccine;
+        bool ColortoVaccine[4];
+        // 
+        int CitytoColor [48];
+
         public:
         Board()
         {
