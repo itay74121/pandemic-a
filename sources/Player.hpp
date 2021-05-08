@@ -3,8 +3,7 @@
 #include "Color.hpp"
 #include <string>
 #include "Board.hpp"
-#include <unordered_map>
-#include <unordered_map>
+#include <vector>
 
 namespace pandemic
 {
@@ -14,7 +13,7 @@ namespace pandemic
         Board * b;
         City c;
         std::string r;
-        std::unordered_map<City,bool> cards;
+        std::vector<City> cards;
         void insert_card(City c);
         bool check_card(City c);
         void throw_card(City c);
@@ -23,10 +22,10 @@ namespace pandemic
         Player(Board & b, City c,int cards);
         virtual Player& drive(City c);
         virtual Player& fly_direct(City c);
-        Player& fly_charter(City c);
-        Player& fly_shuttle(City c);
+        virtual Player& fly_charter(City c);
+        virtual Player& fly_shuttle(City c);
         virtual Player& build();
-        virtual Player& discover_cure(Color c);
+        virtual Player& discover_cure(Color c,int n =CARDS_NEEDED);
         virtual Player& treat(City c);
         virtual std::string role();
         Player& take_card(City c);

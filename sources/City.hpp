@@ -1,5 +1,6 @@
 #pragma once 
-
+#define CARDS_TOTAL 48
+#define CARDS_NEEDED 5
 namespace pandemic
 {
     enum City
@@ -51,7 +52,8 @@ namespace pandemic
         Karachi ,
         Miami ,
         Bogota ,
-        Sydney 
+        Sydney,
+        NoCity
     };
     // City operator ++( City value )
     // {   

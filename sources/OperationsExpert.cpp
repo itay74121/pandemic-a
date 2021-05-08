@@ -9,6 +9,7 @@ namespace pandemic
     }
     Player& OperationsExpert::build()
     {
+        this->b->get_city(this->c).station = true;
         return *this;
     }
 }
