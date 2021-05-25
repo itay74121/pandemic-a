@@ -29,6 +29,6 @@ namespace pandemic
         virtual Player& treat(City c);
         virtual std::string role();
         Player& take_card(City c);
-        
+        City getcity(){return this->c;};
     };
 }
